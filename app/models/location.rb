@@ -1,6 +1,7 @@
-class Location < ApplicationRecord
+# frozen_string_literal: true
 
-  #VALIDATIONS
+class Location < ApplicationRecord
+  # VALIDATIONS
   validates :name, presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
