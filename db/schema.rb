@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_082056) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_25_142602) do
   create_table "locations", force: :cascade do |t|
+    t.string "name"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
@@ -26,6 +27,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_082056) do
     t.float "humidity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rain"
+    t.float "snow"
+    t.float "sunshine_duration"
+    t.float "global_tilted_irradiance"
+    t.float "hour"
   end
 
 end
