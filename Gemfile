@@ -10,10 +10,6 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Database
-gem 'sqlite3', group: :development
-gem "pg", group: :production
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -54,11 +50,15 @@ gem "json"
 gem "rack-cors"
 
 group :development, :test do
+  # Database
+  gem "sqlite3", "~> 1.3", ">= 1.3.6"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
 end
 
 group :development do
+  # Database
+  gem "pg"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
