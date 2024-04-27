@@ -34,7 +34,7 @@ class WeatherController < ApplicationController
       end
     end
 
-    weather_data_records = WeatherData.where(latitude:, longitude:, date: start_date..end_date)
+    weather_data_records = WeatherData.where(latitude:, longitude:, date: start_date..end_date).order(:date)
 
     missing_dates = (start_date..end_date).to_a - weather_data_records.pluck(:date)
 
