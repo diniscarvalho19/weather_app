@@ -1,14 +1,11 @@
-# PostgreSQL
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   
 development:
   <<: *default
-  database: weather_app_development
-  username: dscc1
-  password: ines.0102
+  database: db/development.sqlite3
 
 test:
   <<: *default
@@ -16,6 +13,7 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
   database: weather_app_production
   username: weather_app
   password: <%= ENV['WEATHER_APP_DATABASE_PASSWORD'] %>
