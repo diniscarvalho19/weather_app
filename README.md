@@ -4,17 +4,18 @@ Weather Archive API
 Introduction
 ------------
 
-This project is a weather API controller built using Ruby on Rails. It provides endpoints to fetch weather data for specific locations and time periods from an external weather API. Additionally, it handles caching of location data and missing weather records. CORS header configured only for localhost of React App for developmento or url of React App in [Netlify](https://weather-archive-xp.netlify.app/) for production. 
+This project is a weather API controller built using Ruby on Rails. It provides endpoints to fetch weather data for specific locations and time periods from an external weather API. Additionally, it handles caching of location data and missing weather records. CORS header configured to accept requests comming from React App. Specifically localhost for development and url of React App in deployed using Netlify for production. This React App already deployed can be accessed [here](https://weather-archive-xp.netlify.app/).
 
 This Rails App is live with Heroku and can be found [here](https://sleepy-river-65200-79c7ffcf377b.herokuapp.com/).
 
 Features
 --------
-
 -   Fetch weather data for a specific location and time period.
 -   Caching of location data to minimize external API calls.
 -   Handling missing weather records by fetching from the external API.
 -   Provides weather data in JSON format.
+-   Database for development and database for production.
+-   Swagger documentation of API.
 
 Installation and Setup
 ----------------------
