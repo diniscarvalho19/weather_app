@@ -3,9 +3,10 @@
 # Add Cross-Origin to header
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:5173', 'https://weather-archive-xp.netlify.app'
+    origins "http://localhost:5173", "https://weather-archive-xp.netlify.app"
 
-    resource '*',
+    # TODO: Add credentials
+    resource "*",
              headers: :any,
              methods: %i[get post put patch delete options head],
              credentials: true,
