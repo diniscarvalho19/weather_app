@@ -30,7 +30,7 @@ Usage
 
 ### Endpoint
 
-php
+
 
 
 `GET /weather?location=<location>&start_date=<start_date>&end_date=<end_date> `
@@ -41,7 +41,7 @@ php
 
 ### Example
 
-sql
+
 
 
 `GET /weather?location=New+York&start_date=2024-04-01&end_date=2024-04-10`
