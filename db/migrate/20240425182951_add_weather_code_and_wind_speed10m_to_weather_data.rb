@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddWeatherCodeAndWindSpeed10mToWeatherData < ActiveRecord::Migration[7.1]
   def change
     add_column :weather_data, :weather_code, :string
