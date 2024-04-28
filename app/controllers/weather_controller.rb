@@ -43,6 +43,9 @@ class WeatherController < ApplicationController
       create_weather_data(latitude, longitude, weather_data)
     end
 
+    # Addition of Hours do Data
+    # Pro: Prevent further hour calculations on the client side
+    # Con: First time results can take a bit more time
     weather_data = {
       "time" => weather_data_records.pluck(:date),
       "temperature_2m" => weather_data_records.pluck(:temperature),
@@ -55,9 +58,6 @@ class WeatherController < ApplicationController
       "weather_code" => weather_data_records.pluck(:weather_code),
       "wind_speed_10m" => weather_data_records.pluck(:wind_speed_10m),
     }
-
-    # Pro: Prevent further hour calculations on the client side
-    # Con: First time results can take a bit more time
 
     render json: weather_data
   end

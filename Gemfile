@@ -43,11 +43,24 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Debugging
 gem "byebug"
+
+# Api connection
 gem "faraday"
+
+#Location to Lat/Long
 gem "geocoder"
+
+# Json
 gem "json"
+
+# Cors headers
 gem "rack-cors"
+
+# Swagger for API doc
+gem "rswag-api"
+gem "rswag-ui"
 
 group :development, :test do
   # Database
@@ -57,6 +70,9 @@ group :development, :test do
 end
 
 group :development do
+  gem "rspec-rails"
+  gem "rswag-specs"
+
   # Database
   gem "pg"
   # Use console on exceptions pages [https://github.com/rails/web-console]

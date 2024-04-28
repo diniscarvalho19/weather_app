@@ -1,0 +1,85 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/weather":
+    get:
+      summary: Fetch weather data
+      tags:
+      - Weather
+      parameters:
+      - name: location
+        in: query
+        required: true
+        description: Location name
+        schema:
+          type: string
+      - name: start_date
+        in: query
+        required: true
+        description: Start date (YYYY-MM-DD)
+        schema:
+          type: string
+      - name: end_date
+        in: query
+        required: true
+        description: End date (YYYY-MM-DD)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  time:
+                    type: array
+                    items:
+                      type: string
+                  temperature_2m:
+                    type: array
+                    items:
+                      type: float
+                  relative_humidity_2m:
+                    type: array
+                    items:
+                      type: float
+                  rain:
+                    type: array
+                    items:
+                      type: float
+                  snowfall:
+                    type: array
+                    items:
+                      type: float
+                  sunshine_duration:
+                    type: array
+                    items:
+                      type: integer
+                  hour:
+                    type: array
+                    items:
+                      type: integer
+                  global_tilted_irradiance:
+                    type: array
+                    items:
+                      type: float
+                  weather_code:
+                    type: array
+                    items:
+                      type: integer
+                  wind_speed_10m:
+                    type: array
+                    items:
+                      type: float
+        '404':
+          description: not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
